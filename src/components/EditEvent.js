@@ -2,12 +2,13 @@ import React, {useState}from 'react'
 
 export default function EditEvent({data, //setIsEditing, handleUpdateEvent
 }) {
-    const { attendees ,event_type } = data
+    const { attendees ,event_type ,price } = data
 
 
 
     const [updatedAttendees, setUpdatedAttendees] = useState(attendees);
     const [updatedEventType, setUpdatedEventType] = useState(event_type);
+    const [updatedPrice, setUpdatedPrice] = useState(price); 
     //attendees function
 
     function handleAttendeesChange(e){
@@ -17,6 +18,11 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
     //eventtype function
     function handleEventTypeChange(e){
         setUpdatedEventType(e.target.value)
+    }
+
+    //price function
+    function handlePriceChange(e){
+        setUpdatedPrice(e.target.value)
     }
 
   return (
@@ -32,6 +38,7 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
             className="edit-event-input">
         </input>
 
+
         <br/>
         
         <label className="form-label" htmlFor="event-type">Type of Event: </label>
@@ -39,8 +46,8 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
             name="event-type"
             type="string"
             placeholder="Type of event..."
-            //value={updatedEventType}
-            //onChange={handleEventTypeChange}
+            value={updatedEventType}
+            onChange={handleEventTypeChange}
             className="edit-event-input"
             ></input>
             <br/>
