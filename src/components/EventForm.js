@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {useNavigate } from "react-router-dom"
 
 function EventForm() {
 
@@ -10,6 +11,8 @@ function EventForm() {
     const [venue, setVenue] = useState('')
     let navigate = useNavigate(); 
 
+
+    //handle change functions
 
   return (
     <div>EventForm</div>
