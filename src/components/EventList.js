@@ -3,6 +3,18 @@ import EventCard from './EventCard';
 import Search from './Search';
 
 function EventList() {
+
+  const [dataIndex, setDataIndex] = useState(0)
+  // console.log(username)
+
+  const [searchTerm, setSearchTerm] = useState("")
+
+  //   const filteredData = data.filter(({username}) => {
+  //       return username.toLowerCase().includes(searchTerm.toLowerCase())
+  //     })
+
+
+
   return (
     <>
     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
