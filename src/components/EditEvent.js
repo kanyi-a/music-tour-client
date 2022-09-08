@@ -21,8 +21,8 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
         name="attendees"
             type="number"
             placeholder="Amount of people attending..."
-            //value={updatedAttendees}
-            //onChange ={handleAttendeesChange}
+            value={updatedAttendees}
+            onChange ={handleAttendeesChange}
             className="edit-event-input">
         </input>
 
