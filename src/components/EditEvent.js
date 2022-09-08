@@ -2,15 +2,21 @@ import React, {useState}from 'react'
 
 export default function EditEvent({data, //setIsEditing, handleUpdateEvent
 }) {
-    const { attendees } = data
+    const { attendees ,event_type } = data
 
 
 
     const [updatedAttendees, setUpdatedAttendees] = useState(attendees);
+    const [updatedEventType, setUpdatedEventType] = useState(event_type);
     //attendees function
 
     function handleAttendeesChange(e){
         setUpdatedAttendees(e.target.value)
+    }
+
+    //eventtype function
+    function handleEventTypeChange(e){
+        setUpdatedEventType(e.target.value)
     }
 
   return (
