@@ -5,7 +5,7 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
     const { attendees ,event_type ,price ,date } = data
 
 
-
+    //usestate
     const [updatedAttendees, setUpdatedAttendees] = useState(attendees);
     const [updatedEventType, setUpdatedEventType] = useState(event_type);
     const [updatedPrice, setUpdatedPrice] = useState(price); 
@@ -30,8 +30,8 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
         setUpdatedDate(e.target.value)
     }
 
-
-
+    //handle submit function
+    
   return (
       //attendees input 
     <form className='edit-event'>
