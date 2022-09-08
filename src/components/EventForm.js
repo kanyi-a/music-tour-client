@@ -26,7 +26,17 @@ function EventForm() {
         setDate(e.target.value)
     }
     //handle submit function
-
+    function handleSubmit(e){
+        e.preventDefault();
+        const newEventObj = {
+            attendees: attendees,
+            event_type: eventType,
+            price: price,
+            date: date,
+            venue_id: venue,
+            user_id: 5,
+        }
+        
   return (
     <div>EventForm</div>
   )
