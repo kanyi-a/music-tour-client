@@ -12,7 +12,20 @@ function EventForm() {
     let navigate = useNavigate(); 
 
 
-    //handle change functions
+    //handle change functions  
+    function handleAttendeesChange(e){
+        setAttendees(e.target.value)
+    }
+    function handleEventTypeChange(e){
+        setEventType(e.target.value)
+    }
+    function handlePriceChange(e){
+        setPrice(e.target.value)
+    }
+    function handleDateChange(e){
+        setDate(e.target.value)
+    }
+    //handle submit function
 
   return (
     <div>EventForm</div>
