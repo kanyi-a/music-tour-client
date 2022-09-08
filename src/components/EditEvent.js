@@ -1,6 +1,18 @@
-import React from 'react'
+import React, {useState}from 'react'
 
-export const EditEvent = () => {
+export default function EditEvent({data, //setIsEditing, handleUpdateEvent
+}) {
+    const { attendees } = data
+
+
+
+    const [updatedAttendees, setUpdatedAttendees] = useState(attendees);
+    //attendees function
+
+    function handleAttendeesChange(e){
+        setUpdatedAttendees(e.target.value)
+    }
+
   return (
       //attendees input 
     <form className='edit-event'>
@@ -14,16 +26,6 @@ export const EditEvent = () => {
             className="edit-event-input">
         </input>
 
-        <br/>
-            <label className="form-label" htmlFor="event-type">Type of Event: </label>
-            <input 
-            name="event-type"
-            type="string"
-            placeholder="Type of event..."
-            //value={updatedEventType}
-            //onChange={handleEventTypeChange}
-            className="edit-event-input"
-            ></input>
         <br/>
         
         <label className="form-label" htmlFor="event-type">Type of Event: </label>
