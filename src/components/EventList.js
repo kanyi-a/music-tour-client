@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import EventCard from './EventCard';
 import Search from './Search';
 
-function EventList() {
+function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
 
   const [dataIndex, setDataIndex] = useState(0)
   // console.log(username)
