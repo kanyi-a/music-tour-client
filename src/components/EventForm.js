@@ -36,7 +36,25 @@ function EventForm() {
             venue_id: venue,
             user_id: 5,
         }
-        
+            fetch("http://localhost:9292/add-event",{
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newEventObj)
+                })
+                .then(response => response.json())
+                .then((data) => console.log(data))  
+                .then(navigate("/my-events", { replace: true }))
+                setAttendees("")
+                setEventType('')
+                setPrice("")
+                setDate('')
+        }
+
+            useEffect(() => {
+                fetch(`http://localhost:9292/venues`)
+                .then(r => r.json())
+                .then(data => setVenueData(data))
+            }, [])
   return (
     <div>EventForm</div>
   )
