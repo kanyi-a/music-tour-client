@@ -75,7 +75,7 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
             name="date"
             type="date"
             placeholder="Event date..."
-            //value={updatedDate}
+            value={updatedDate}
             onChange={handleDateChange}
             className="edit-event-input"
             ></input>
