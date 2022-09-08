@@ -57,8 +57,8 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
             name="price"
             type="number"
             placeholder="Ticket price..."
-            //value={updatedPrice}
-            //onChange={handlePriceChange}
+            value={updatedPrice}
+            onChange={handlePriceChange}
             className="edit-event-input"
             ></input>
             <br/>
