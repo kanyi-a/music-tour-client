@@ -12,7 +12,23 @@ function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
   //   const filteredData = data.filter(({username}) => {
   //       return username.toLowerCase().includes(searchTerm.toLowerCase())
   //     })
+  const eventList = [...data]
+  .filter((data) => { 
+    return data.user.username.toLowerCase().includes(searchTerm.toLowerCase());
+  })
+    .slice(dataIndex, dataIndex + 8)
 
+    .map((data) => 
+    <EventCard
+        key={data.id}
+        data={data}
+        handleDeleteEvent={handleDeleteEvent}
+        handleUpdateEvent={handleUpdateEvent}
+    />)
+
+    function handleClickMore() {
+      setDataIndex((dataIndex) => (dataIndex + 8) % data.length);
+    }
 
 
   return (
