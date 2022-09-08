@@ -1,6 +1,8 @@
 import React from 'react'
+import EventCard from './EventCard';
+import Search from './Search';
 
-const EventList = () => {
+function EventList() {
   return (
     <div>EventList</div>
   )
