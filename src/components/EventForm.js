@@ -55,6 +55,16 @@ function EventForm() {
                 .then(r => r.json())
                 .then(data => setVenueData(data))
             }, [])
+
+            const venueOptions = venueData.map(({ id, venue_name }) => 
+            <option  key={id} value={id}>{venue_name}</option>
+            )
+      
+            function handleVenueSelect(e){
+                setVenue(e.target.value)
+            }
+
+            
   return (
     <div>EventForm</div>
   )
