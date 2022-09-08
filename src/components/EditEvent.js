@@ -1,6 +1,6 @@
 import React, {useState}from 'react'
 
-export default function EditEvent({data, //setIsEditing, handleUpdateEvent
+export default function EditEvent({data, setIsEditing, handleUpdateEvent
 }) {
     const { attendees ,event_type ,price ,date } = data
 
