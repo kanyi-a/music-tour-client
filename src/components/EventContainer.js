@@ -1,8 +1,8 @@
-import React,  { useState, useEffect } from 'react'
+import React from 'react' //{ useState, useEffect } from 'react'
 import EventList from './EventList';
 
 
-function EventContainer() {
+function EventContainer({data, handleDeleteEvent, handleUpdateEvent}) {
   return (
     <>
     <br/>
@@ -17,4 +17,4 @@ function EventContainer() {
   )
 }
 
-export default EventContainer
+export default EventContainer;
