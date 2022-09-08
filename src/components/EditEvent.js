@@ -2,13 +2,14 @@ import React, {useState}from 'react'
 
 export default function EditEvent({data, //setIsEditing, handleUpdateEvent
 }) {
-    const { attendees ,event_type ,price } = data
+    const { attendees ,event_type ,price ,date } = data
 
 
 
     const [updatedAttendees, setUpdatedAttendees] = useState(attendees);
     const [updatedEventType, setUpdatedEventType] = useState(event_type);
     const [updatedPrice, setUpdatedPrice] = useState(price); 
+    const [updatedDate, setUpdatedDate] = useState(date);
     //attendees function
 
     function handleAttendeesChange(e){
@@ -24,6 +25,12 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
     function handlePriceChange(e){
         setUpdatedPrice(e.target.value)
     }
+    //date function
+    function handleDateChange(e){
+        setUpdatedDate(e.target.value)
+    }
+
+
 
   return (
       //attendees input 
@@ -69,7 +76,7 @@ export default function EditEvent({data, //setIsEditing, handleUpdateEvent
             type="date"
             placeholder="Event date..."
             //value={updatedDate}
-            //onChange={handleDateChange}
+            onChange={handleDateChange}
             className="edit-event-input"
             ></input>
             <br/>
