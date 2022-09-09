@@ -12,6 +12,8 @@ function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
   //   const filteredData = data.filter(({username}) => {
   //       return username.toLowerCase().includes(searchTerm.toLowerCase())
   //     })
+
+
   const eventList = [...data]
   .filter((data) => { 
     return data.user.username.toLowerCase().includes(searchTerm.toLowerCase());
@@ -41,6 +43,7 @@ function EventList({data, handleDeleteEvent, handleUpdateEvent}) {
     <br/>
     <br/>
     <br/>
+    
     <div className="next-container">
         <button className="next-button" onClick={handleClickMore}>Next</button>
     </div>

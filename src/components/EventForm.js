@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import {useNavigate } from "react-router-dom"
 
-function EventForm() {
 
+
+function EventForm({addEvent}) {
     const [attendees, setAttendees] = useState("");
     const [eventType, setEventType] = useState("");
     const [price, setPrice] = useState("");
@@ -43,7 +44,7 @@ function EventForm() {
                 })
                 .then(response => response.json())
                 .then((data) => console.log(data))  
-                .then(navigate("/my-events", { replace: true }))
+                .then(navigate("/create-event", { replace: true }))
                 setAttendees("")
                 setEventType('')
                 setPrice("")
@@ -57,16 +58,76 @@ function EventForm() {
             }, [])
 
             const venueOptions = venueData.map(({ id, venue_name }) => 
-            <option  key={id} value={id}>{venue_name}</option>
+            <option key={id} value={id}>{venue_name}</option>
             )
       
             function handleVenueSelect(e){
                 setVenue(e.target.value)
             }
 
+
+    return (
+        <>
+        <br/>
+        <h2>Add an Event</h2>
+        <br/>
+        <form onSubmit={handleSubmit} className="form">
+        <label className="input-label" htmlFor="venue-data">Venues: </label>
+        <br/>
+            <select id="venue-data" onChange={handleVenueSelect}>
+                {venueOptions}
+            </select>
+            <br/>
+            <br/>
+            <label className="input-label" htmlFor="attendees">Attendees:</label>
+            <input 
+            name="attendees"
+            type="number"
+            placeholder="Amount of people attending..."
+            value={attendees}
+            onChange={handleAttendeesChange}
+            className="form-input"
+            ></input>
+            <br/>
+            <br/>
+            <label className="input-label" htmlFor="event-type">Type of Event:</label>
+            <input 
+            name="event-type"
+            type="string"
+            placeholder="Type of event..."
+            value={eventType}
+            onChange={handleEventTypeChange}
+            className="form-input"
+            ></input>
+            <br/>
+            <br/>
+            <label className="input-label" htmlFor="price">Ticket Price:</label>
+            <input 
+            name="price"
+            type="number"
+            placeholder="Ticket price..."
+            value={price}
+            onChange={handlePriceChange}
+            className="form-input"
+            ></input>
+            <br/>
+            <br/>
+            <label className="input-label" htmlFor="date">Date:</label>
+            <input 
+            name="date"
+            type="date"
+            placeholder="Event date..."
+            value={date}
+            onChange={handleDateChange}
+            className="form-input"
+            ></input>
+            <br/>
+            <br/>
+            <button className="form-input" type="submit">Create Event</button> 
+        </form>
             
-  return (
-    <div>EventForm</div>
+        </>
+
   )
 }
 

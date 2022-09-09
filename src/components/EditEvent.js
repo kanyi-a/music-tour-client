@@ -1,8 +1,7 @@
 import React, {useState}from 'react'
 
-export default function EditEvent({data, setIsEditing, handleUpdateEvent
-}) {
-    const { attendees ,event_type ,price ,date } = data
+ function EditEvent({data, setIsEditing, handleUpdateEvent }) {
+    const { id ,attendees ,event_type ,price ,date } = data
 
 
     //usestate
@@ -33,9 +32,9 @@ export default function EditEvent({data, setIsEditing, handleUpdateEvent
     //handle submit function
     function handleSubmit(e) {
         e.preventDefault();
-
+    
                 //FETCH
-                fetch(`http://localhost:9292/events/${id}`, {
+        fetch(`http://localhost:9292/events/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -52,57 +51,57 @@ export default function EditEvent({data, setIsEditing, handleUpdateEvent
           .then(() => setIsEditing(false));
       }
 
-
-        return (
+    return (
             //attendees input 
             <form className='edit-event' onSubmit={handleSubmit}>
-                <label className='form-label' htmlFor='attendees'>Attendees:</label>
-                <input
-                name="attendees"
-                    type="number"
-                    placeholder="Amount of people attending..."
-                    value={updatedAttendees}
-                    onChange ={handleAttendeesChange}
-                    className="edit-event-input">
-                </input>
+            <label className='form-label' htmlFor='attendees'>Attendees:</label>
+            <input
+            name="attendees"
+                type="number"
+                placeholder="Amount of people attending..."
+                value={updatedAttendees}
+                onChange ={handleAttendeesChange}
+                className="edit-event-input">
+            </input>
 
 
+            <br/>
+            
+            <label className="form-label" htmlFor="event-type">Type of Event: </label>
+                <input 
+                name="event-type"
+                type="string"
+                placeholder="Type of event..."
+                value={updatedEventType}
+                onChange={handleEventTypeChange}
+                className="edit-event-input"
+                ></input>
                 <br/>
-                
-                <label className="form-label" htmlFor="event-type">Type of Event: </label>
-                    <input 
-                    name="event-type"
-                    type="string"
-                    placeholder="Type of event..."
-                    value={updatedEventType}
-                    onChange={handleEventTypeChange}
-                    className="edit-event-input"
-                    ></input>
-                    <br/>
-                
-                    <label className="form-label" htmlFor="price">Ticket Price: </label>
-                    <input 
-                    name="price"
-                    type="number"
-                    placeholder="Ticket price..."
-                    value={updatedPrice}
-                    onChange={handlePriceChange}
-                    className="edit-event-input"
-                    ></input>
-                    <br/>
+            
+                <label className="form-label" htmlFor="price">Ticket Price: </label>
+                <input 
+                name="price"
+                type="number"
+                placeholder="Ticket price..."
+                value={updatedPrice}
+                onChange={handlePriceChange}
+                className="edit-event-input"
+                ></input>
+                <br/>
 
-                    <label className="form-label" htmlFor="date">Date: </label>
-                    <input 
-                    name="date"
-                    type="date"
-                    placeholder="Event date..."
-                    value={updatedDate}
-                    onChange={handleDateChange}
-                    className="edit-event-input"
-                    ></input>
-                    <br/>
-                <input className="save-button" type="submit" value="Save" />
+                <label className="form-label" htmlFor="date">Date: </label>
+                <input 
+                name="date"
+                type="date"
+                placeholder="Event date..."
+                value={updatedDate}
+                onChange={handleDateChange}
+                className="edit-event-input"
+                ></input>
+                <br/>
+            <input className="save-button" type="submit" value="Save" />
 
-        </form>
-        )
-        }
+    </form>
+    )
+    }
+export default EditEvent;

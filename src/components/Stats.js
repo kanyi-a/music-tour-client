@@ -1,6 +1,5 @@
 import React, {useState, useEffect}from 'react'
-
-export const Stats = () => {
+function Stats(){
     const [popular, setPopular] = useState("")
     const [busy, setBusy] = useState("")
 
@@ -19,8 +18,6 @@ export const Stats = () => {
         .then(data => setBusy(data))
       }, [])
     
-
-
   return (
     <> 
     <h2> Artist Stats </h2>
@@ -38,3 +35,4 @@ export const Stats = () => {
     </>
   )
 }
+export default Stats;
