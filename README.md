@@ -1,7 +1,11 @@
 # Gig-Wiz
  ## By Angela W Kanyi
 ## Screenshots
- 
+![Screenshot from 2022-09-09 10-12-21](https://user-images.githubusercontent.com/106078081/189612023-34d66d24-5957-4874-bd81-3d187bdce0b2.png)
+
+![Screenshot from 2022-09-09 10-12-30](https://user-images.githubusercontent.com/106078081/189612199-31c652c5-e606-4963-bd98-89e66d5868fa.png)
+
+![Screenshot from 2022-09-09 10-12-37](https://user-images.githubusercontent.com/106078081/189612340-9734413f-30de-484c-8d08-fe3b9297d719.png)
  ## Table of Content
  - [Description](#description)
  - [Features](#features)
