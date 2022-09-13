@@ -1,7 +1,10 @@
-.aboutus{
-
-    width: 100vh;
-    font-size: large;
+body{
+    box-sizing: border-box;
+    font-size:x-large;
     font-family: 'Hachi Maru Pop', cursive; 
-    align-items: center;
+    content: '\ed8b';
+    text-align: center;
+    background-color: aqua;
+   
+  
 }
